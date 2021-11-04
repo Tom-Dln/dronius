@@ -1,0 +1,59 @@
+@import "breakpoint.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.app-home {
+  font-family: "Montserrat", sans-serif;
+
+  & img {
+    width: 20px;
+  }
+  &-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    background-image: url("../assets/bg.png");
+    background-size: cover;
+    @include for-tablet-portrait-up {
+      padding: 50px;
+    }
+    & h1 {
+      font-size: 40px;
+      font-weight: 500;
+      @include for-tablet-portrait-up {
+        font-size: 55px;
+      }
+      @include for-desktop-up {
+        font-size: 70px;
+        width: 60%;
+      }
+    }
+    & img {
+      width: 200px;
+      animation: hover-vertical 2000ms ease-in-out infinite;
+      @include for-tablet-portrait-up {
+        width: 300px;
+      }
+      @include for-desktop-up {
+        width: 400px;
+      }
+    }
+  }
+  &-about {
+    background-color: #026ad4;
+  }
+}
+
+@keyframes hover-vertical {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
